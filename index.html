@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komolika | Portfolio</title>
+    <!-- Elegant Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FAF9F6; /* Soft Off-White */
+            color: #1A1A1A; /* Soft Dark Charcoal */
+            line-height: 1.6;
+        }
+
+        /* Navigation Header */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(250, 249, 246, 0.95);
+            z-index: 1000;
+            border-bottom: 1px solid #EAEAEA;
+        }
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: #1A1A1A;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #666;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #1A1A1A;
+        }
+
+        /* Container styling */
+        .section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        /* Hero & About Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 40px;
+        }
+        .hero-image-container {
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 3/4;
+            background-color: #EAEAEA; /* Fallback color */
+            overflow: hidden;
+        }
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .about-text {
+            max-width: 700px;
+            font-size: 0.95rem;
+            color: #444;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* Vitals Section */
+        .vitals-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .vital-card {
+            background-color: #FFF;
+            padding: 20px;
+            border: 1px solid #ECECEC;
+        }
+        .vital-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 5px;
+        }
+        .vital-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        /* Image Grids (Digitals, Work, Test Shoots) */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .grid-item {
+            background-color: #EAEAEA;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            position: relative;
+        }
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .grid-item img:hover {
+            transform: scale(1.03);
+        }
+        .item-label {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 5px 10px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .contact-link {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #1A1A1A;
+            text-decoration: none;
+            margin: 15px 0;
+            transition: opacity 0.3s;
+        }
+        .contact-link:hover {
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: #888;
+            border-top: 1px solid #EAEAEA;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .vitals-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .section {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">KOMOLIKA</a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#vitals">Vitals</a></li>
+                    <li><a href="#digitals">Digitals</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="hero">
+            <div class="hero-image-container">
+                <!-- Replace 'your-about-photo-url.jpg' with your photo link -->
+                <img src="https://via.placeholder.com/500x667" alt="Komolika Profile Photo">
+            </div>
+            <p class="about-text">
+                South Delhi–born and based model and content creator, performing under the stage name Komolika — a name that was also my first unofficial birth name. I chose to keep it because, much like the iconic character Komolika, I believe in being unapologetically authentic, expressive, and fully myself. Through fashion, humor, and content creation, I enjoy experimenting with different styles and creative concepts while staying rooted in individuality, personality, and self-expression. Fashion and art comes naturally to me; creation marks my passion.
+            </p>
+        </div>
+    </section>
+
+    <!-- Vitals Section -->
+    <section class="section" id="vitals">
+        <h2>Vitals</h2>
+        <div class="vitals-grid">
+            <div class="vital-card"><div class="vital-label">Bust</div><div class="vital-value">32"</div></div>
+            <div class="vital-card"><div class="vital-label">Waist</div><div class="vital-value">28"</div></div>
+            <div class="vital-card"><div class="vital-label">Hips</div><div class="vital-value">33"</div></div>
+            <div class="vital-card"><div class="vital-label">Eyes</div><div class="vital-value">Black</div></div>
+            <div class="vital-card"><div class="vital-label">Hair</div><div class="vital-value">Black</div></div>
+            <div class="vital-card"><div class="vital-label">Shoe</div><div class="vital-value">6 UK</div></div>
+        </div>
+    </section>
+
+    <!-- Digitals Section -->
+    <section class="section" id="digitals">
+        <h2>Clean Digitals</h2>
+        <div class="image-grid">
+            <div class="grid-item">
+                <img src="https://via.placeholder.com/400x533" alt="Digital 1">
+                <div class="item-label">Front Portrait</div>
+            </div>
+            <div class="grid-item">
+                <img src="https://via.placeholder.com/400x533" alt="Digital 2">
+                <div class="item-label">Profile</div>
+            </div>
+            <div class="grid-item">
+                <img src="https://via.placeholder.com/400x533" alt="Digital 3">
+                <div class="item-label">Full Body</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work & Test Shoots Section -->
+    <section class="section" id="work">
+        <h2>Portfolio & Experience</h2>
+        <div class="image-grid">
+            <div class="grid-item">
+                <img src="https://via.placeholder.com/400x533" alt="Flipkart UGC">
+                <div class="item-label">Flipkart UGC</div>
+            </div>
+            <div class="grid-item">
+                <img src="https://via.placeholder.com/400x533" alt="Naughty Rituals">
+                <div class="item-label">Naughty Rituals</div>
+            </div>
+            <div class="grid-item">
+                <img src="https://via.placeholder.com/400x533" alt="Freelance Test Shoot">
+                <div class="item-label">Freelance Test Shoots</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2>Let's Collaborate</h2>
+        <div class="contact-content">
+            <p style="margin-bottom: 20px; font-size: 0.9rem; color: #666;">For bookings, shoots, and collaborations, reach out via email or direct message.</p>
+            <a href="mailto:Komolika.business@gmail.com" class="contact-link">Komolika.business@gmail.com</a>
+            <a href="https://instagram.com/komolikahh" target="_blank" class="contact-link">@komolikahh</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 KOMOLIKA. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
